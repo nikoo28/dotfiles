@@ -3,8 +3,42 @@
 # Please adapt and uncomment the following lines:
 	name = Nikhil Lohia
 	email = nikoo28@gmail.com
+
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
+
+[alias]
+        st = status
+        co = checkout
+        cp = cherry-pick
+        ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
+        ld = log --pretty=format:"%C(yellow)%h\\ %C(green)%ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=short --graph
+        ls = log --pretty=format:"%C(green)%h\\ %C(yellow)[%ad]%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=relative
+
+[color]
+
+        # Use colors in Git commands that are capable of colored output when
+        # outputting to the terminal. (This is the default setting in Git ≥ 1.8.4.)
+        ui = auto
+
+[color "branch"]
+
+        current = yellow reverse
+        local = yellow
+        remote = green
+
+[color "diff"]
+
+        meta = yellow bold
+        frag = magenta bold # line info
+        old = red # deletions
+        new = green # additions
+
+[color "status"]
+
+        added = yellow
+        changed = green
+        untracked = cyan
