@@ -58,3 +58,17 @@ export PATH=$PATH:$GLASSFISH_HOME/bin
 alias st="/Applications/Sublime\ Text\ 2.app/Contents/SharedSupport/bin/subl"
 alias start-hadoop="start-dfs.sh; start-yarn.sh"
 alias stop-hadoop="stop-dfs.sh; stop-yarn.sh"
+
+export CLICOLOR=1
+export LSCOLORS=gxfxcxdxbxegedabagacad
+
+export SANS_ANACONDA="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+
+alias perseus="export PATH="\$SANS_ANACONDA" && echo Medusa decapitated."
+alias medusa="export PATH="/Applications/anaconda/bin:\$SANS_ANACONDA" && echo Perseus defeated."
+
+brew () {
+  perseus
+  command brew "$@"
+  medusa
+}
